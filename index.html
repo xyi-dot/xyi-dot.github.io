@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17302b">
+  <title>国门智行｜比赛演示</title>
+  <style>
+    :root{--ink:#17302b;--green:#285f54;--orange:#d9863d;--bg:#f5f3ed;--muted:#68766f;--line:#c9d1c9}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;line-height:1.65}
+    header{background:var(--ink);color:#fff;padding:44px 20px 38px}.wrap{width:min(1080px,100%);margin:auto}.eyebrow{font-size:13px;letter-spacing:2px;color:#c9d8d0}.title{font-size:clamp(30px,6vw,52px);line-height:1.2;margin:12px 0}.subtitle{color:#d8e3dc;max-width:720px;margin:0}
+    main{padding:26px 16px 50px}.card{background:#fff;border:1px solid var(--line);padding:18px;margin:0 auto 20px;max-width:1080px}.card h2{font-size:22px;margin:0 0 8px}.card p{margin:6px 0;color:var(--muted)}video{display:block;width:100%;background:#102521;aspect-ratio:16/9}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.feature{border-top:4px solid var(--green);background:#f8faf7;padding:14px}.feature h3{margin:0 0 6px;font-size:17px}.feature p{font-size:14px}.shot{width:100%;display:block;border:1px solid var(--line);margin-top:14px}
+    .boundary{border-left:5px solid var(--orange);background:#f2e7d8;padding:12px 14px;color:#7d4b20!important}.qr{display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:center}.qr img{width:220px;height:220px;display:block}.url{overflow-wrap:anywhere;font-family:Consolas,monospace;color:var(--green);font-weight:700}.steps{padding-left:20px;color:var(--muted)}
+    footer{text-align:center;color:var(--muted);font-size:12px;padding:0 20px 30px}@media(max-width:720px){.grid{grid-template-columns:1fr}.qr{grid-template-columns:1fr}.qr img{margin:auto}.card{padding:14px}header{padding:32px 20px}}
+  </style>
+</head>
+<body>
+<header><div class="wrap"><div class="eyebrow">比赛展示 · 软件效果与技术原理</div><h1 class="title">国门智行</h1><p class="subtitle">从预约扫码、人脸核验到闸机放行，并展示指纹、虹膜、掌纹、多模态融合、掌静脉与受控客流预测。</p></div></header>
+<main>
+  <section class="card" id="video"><h2>完整演示视频</h2><p>约 3 分钟，真实软件界面配合章节转场与重点高亮。点击画面即可播放，手机可横屏观看。</p><video controls playsinline preload="metadata" poster="/media/video_poster.jpg"><source src="/media/GuomenSmartPass_Competition_Demo.mp4" type="video/mp4">当前浏览器无法播放，请在电脑端打开视频文件。</video></section>
+  <section class="card"><h2>功能展示</h2><p>主链路之外，软件还提供多模态图像演示、掌静脉技术预览和综合看板。</p><div class="grid">
+    <article class="feature"><h3>指纹、虹膜、掌纹</h3><p>真实执行图像解码、质量指标、像素特征和余弦相似度；同源派生正例不代表真实身份准确率。</p></article>
+    <article class="feature"><h3>多模态演示融合</h3><p>显式演示编排与真实人脸结果桥接；人脸失败或业务复核不能被提升为通过。</p></article>
+    <article class="feature"><h3>掌静脉技术预览</h3><p>离线 NIR 样本完成 ROI、增强与 1024 维特征预览；身份融合始终禁用。</p></article>
+  </div><img class="shot" src="/media/multimodal_v3.png" alt="指纹、虹膜、掌纹真实软件界面"><img class="shot" src="/media/palm_vein_pipeline.png" alt="掌静脉原始图像、感兴趣区域与增强结果"><img class="shot" src="/media/dashboard_forecast.png" alt="综合看板与受控客流预测"></section>
+  <section class="card"><h2>公网扫码入口</h2><div class="qr"><img src="/media/showcase_entry_qr.png" alt="国门智行手机展示入口二维码"><div><p>使用系统相机、微信或其他常用扫码工具识别二维码，无需连接展示电脑。</p><p class="url">https://xyi-dot.github.io/</p><ol class="steps"><li>手机连接互联网。</li><li>扫码进入本页。</li><li>点击视频播放，可横屏观看。</li></ol><p class="boundary">这是公网展示入口，需要手机能够访问互联网。</p></div></div></section>
+  <section class="card"><h2>演示边界</h2><p class="boundary">合成旅客、受控预约、虚拟闸机与受控客流样例用于比赛演示，不代表真实口岸部署或生产级识别性能。软件内预约二维码与绿色通行码仍按业务规则使用，与此展示入口二维码相互独立。</p></section>
+</main>
+<footer>国门智行 · UI Scenario R1 · 可运行比赛演示原型</footer>
+</body>
+</html>
